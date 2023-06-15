@@ -5,11 +5,9 @@ txtB = '''pwbfdmtc jms gswg wvsscb ffq lbrhbn lcxc hcr thc mghts vkgfc nrvfgs ds
 rvqw kgsh gbwdh wslrbz pfnpqh mgj kgmq hpzmp kpr jgz bksx lvsbxzv qgzf qcgpc pvf xlt znjntxpj stgwsc vxgcfc cbvwhf tbxwpk nbjbkrz rgc wps rjlfpch bxqhw nckdtf bsncq cnsmqxwn mzmlgpp vnxr qgjs vpkpbsn tgmw lbcxxgsf nnmr wbpdssgm nmddl zcbpcbpt twrkx sdqxsnw lntr rzv hgjjksxf qpnnjwl hbcv fkwkbd ncv plr lmpfkk dpcj jzjbjgp bdttl wrrdnmjz mxqxqdxc shztl gdzj rntpnh rjrlrfk rncp qlrhnww rdzhzx qnnxhm gtd lqklxr gpgpqtrc hfhp hxl bnr fpvxzwmx pfrxglb xmchrvwx wbnxl vjxgbs vddhjkq wndwxs mqndvm hvbncjw pbmlw hzjwqn nfgxqmb pfvnpwj xbwknvmr xtm cnxck qnmtrvx kmhj hdfrtd gqz srlml ckx pwlhnpgf rkln tvq vjgrlfs vpvwnjtg wbswcvbh dzcjppjm slt zvxhgq xhcvvc rjd xhqdvhmp nqlnsk hxmjpmnv sjwwc hbjvpw dpmdnz sxpb qznnxl nwnlmbx vdb hgkkwd znsxfqs kqwjtrcg vhbnd rpgtkzz fmt nmzhrrqn qbqbvpsm kqwxr gvp xvrvsdf pxwt vkdns dpf jwnwz mxpwc xdvs drrlpnr xvpztf pxzm jtg fvfgnzx qndpq dmzwnfgm jzknzgk clbpzcpd xhxsqp zbfck btzjd jwbt gwtll kqj wlsdx sdvnw mqpvxk kjdkt frgwz mpqnqr lpj gvc hcdp zpvrdnc ckvmtbvf bddvc mptrq xrzwj lzlbc pvgkrhd wlkdtjz pslzhzhc qmrr crkxcs jtxhfvr qzd fwrgdmjt cmg xvhcb zmllbxs mxg plzxjqlk cwnf mqt hlsssh lvmptxcd zdbsvmll wshnn xzrz xsnhn jhg jtkqhh kcsb bgsfnz mfxmqjn glzb qtwhllw nfkjfn xgw mvssxl hpb vjhlfgld cgfwq qdvjskx ntnhcl ckm rqrsw dpff krrkl mcs xnk jpnx llw ljhqlbhs njdm gph nwmm bcclbzz wjfktwv mgthn kltqfx hqntlps bdr dqtswd vqmkgkb pmznqzh mwgf nndtsx xfrmgqqj mvkfdhh qxp pvpcmx mhnhb slw clvtxn nfpnlr tsssrk rnvdjpc ptkp hrwx zgblvhlj lqrdrz bhtlqhvv mlpkx jsl vlj kbmfjgs ktzb wrnn ztbcph lxccgcxh bkrhjtsl cbmhp hwswwqg rnwqq srhnz fkvl kcnr qbxwpg hnss gjdn rnxhwgd jgngwzc kfvg nwkjt rhjtsvv txk szkpmn nnzbqwgs pjjzqkvx bkw dfcbw rffn qph kckksgp nzn tpqnm znzppsg tvcgnrb zgdsp tqlqrf vjqqxsp pwj pgft cvl cvr cnhgxsd lkd qlw vwtbh mfxs gbgw'''.split()
 
 tipo_zmb = ['z', 'm', 'b']
-tipo_outras = ['a', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-               'l', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
+tipo_outras = ['a', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k','l', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
 
 #   QUESTÃO A) E no Texto B, quantas preposições existem?
-
 
 def prep(texto):
     contador = 0
@@ -18,12 +16,11 @@ def prep(texto):
             contador += 1
     return print(f'RESPOSTA A: O texto possui {contador} preposições')
 
-
 prep(txtB)
+
 
 #   QUESTÃO B) Já no Texto B, quantos são os verbos?
 #   QUESTÃO C) E quantos verbos do Texto B estão em primeira pessoa?
-
 
 def verbo(texto):
     contador = 0
@@ -35,5 +32,27 @@ def verbo(texto):
             contador1p += 1
     return print(f'RESPOSTA B: O texto possui {contador} verbos'), print(f'RESPOSTA C: O texto possui {contador1p} verbos em primeira pessoa')
 
-
 verbo(txtB)
+
+#   QUESTÃO D) Como seria a lista de vocabulário do Texto B? 
+
+def ordem(texto):
+    ordem = 'zmbtshjpnwlrcxkqvdgf'
+    lst = []
+    for x in texto:
+        txt = ''
+        for c in x:
+            txt += chr(ordem.find(c) + 65)
+        lst.append(txt)
+    lst.sort() 
+
+    vlt = []
+    for x in lst:
+        txt = ''
+        for c in x:
+            txt += ordem[ord(c) - 65]
+        vlt.append(txt)
+    print ('RESPOSTA D:', ' '.join(vlt))
+
+ordem(txtB)
+
